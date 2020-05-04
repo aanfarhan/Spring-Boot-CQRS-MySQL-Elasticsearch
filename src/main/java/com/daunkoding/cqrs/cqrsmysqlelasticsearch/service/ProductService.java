@@ -36,6 +36,8 @@ public class ProductService {
                 .title(savedProduct.getTitle())
                 .description(savedProduct.getDescription())
                 .price(savedProduct.getPrice())
+                .createdAt(savedProduct.getCreatedAt().toString())
+                .updatedAt(savedProduct.getUpdatedAt().toString())
                 .category(categoryDocument)
                 .build();
         return productDocumentRepository.save(productDocument);

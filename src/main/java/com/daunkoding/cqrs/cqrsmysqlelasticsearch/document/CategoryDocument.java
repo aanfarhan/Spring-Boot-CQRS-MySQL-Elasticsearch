@@ -12,7 +12,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(indexName = "store", type = "category")
+@Document(indexName = "category")
 public class CategoryDocument {
     @Id
     private Integer id;

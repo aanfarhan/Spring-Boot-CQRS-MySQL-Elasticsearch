@@ -10,12 +10,13 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 
 import javax.persistence.Id;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Document(indexName = "store", type = "product")
+@Document(indexName = "product")
 public class ProductDocument {
     @Id
     private Integer id;
@@ -25,6 +26,12 @@ public class ProductDocument {
     private String description;
 
     private BigDecimal price;
+
+    @Field(type = FieldType.Auto)
+    private String createdAt;
+
+    @Field(type = FieldType.Auto)
+    private String updatedAt;
 
     @Field(type = FieldType.Nested)
     private CategoryDocument category;
